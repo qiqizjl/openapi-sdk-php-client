@@ -19,7 +19,7 @@ matrix:
   allow_failures:
     - php: hhvm-3.24
     - php: nightly
-    - php: 7.4
+    - php: 8.0
   fast_finish: true
 
 sudo: false
@@ -38,7 +38,7 @@ install:
       echo "xdebug.overload_var_dump = 0" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     fi
   - >
-    if { [ $(phpenv version-name) == "7.2" ] || [ $(phpenv version-name) == "7.3" ] || [ $(phpenv version-name) == "7.4" ] ; } && [ -v COMPOSER_OPTS ]; then
+    if { [ $(phpenv version-name) == "7.2" ] || [ $(phpenv version-name) == "7.3" ] || [ $(phpenv version-name) == "7.4" ] || [ $(phpenv version-name) == "8.0" ] ; } && [ -v COMPOSER_OPTS ]; then
       composer require --dev phpunit/phpunit "～5.7.27"
     fi
   # Resolve dependencies
